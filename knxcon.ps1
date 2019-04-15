@@ -11,9 +11,9 @@ function apply() {
 # install our concfg and pshazz configs
 # also the profile shim
 function install() {
-    concfg tokencolor enable -n
     concfg import "$PSScriptRoot\console-mustang.json" -n
     concfg clean
+    concfg tokencolor enable -n
     apply
 
     # Find $Profile
