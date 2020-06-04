@@ -3,7 +3,8 @@ param($subcommand)
 # ensure the correct pshazz selection
 function apply() {
     if((pshazz config theme) -ne "console-prompt") {
-        cp "$PSScriptRoot\console-prompt.json" "$($env:SCOOP, "$env:USERPROFILE\scoop" | Select-Object -first 1)\apps\pshazz\current\themes"
+        . "$($env:SCOOP, "$env:USERPROFILE\scoop" | Select-Object -first 1)\apps\pshazz\current\lib\core.ps1"
+        cp "$PSScriptRoot\console-prompt.json" "$userThemeDir\console-prompt.json"
         pshazz use console-prompt
     }
 }
